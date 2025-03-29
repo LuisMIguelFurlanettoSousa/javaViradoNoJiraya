@@ -21,5 +21,13 @@ public class Aula08ArraysMultidimencionais01 {
                 System.out.println(numeros[i][j]);
             }
         }
+
+        System.out.println(" ------------------------------------- ");
+
+        for(int[] arrBase : numeros) {
+            for (int num : arrBase) {
+                System.out.println(num);
+            }
+        }
     }
 }
