@@ -10,6 +10,16 @@ public class CarroTeste01 {
         carro.marca = "volks";
         carro.ano = 2007;
 
+
+        Carro carro2 = new Carro();
+
+        carro2.nome = "s10";
+        carro2.marca = "chefrolet";
+        carro2.ano = 2018;
+
+        carro2 = carro;
+
         System.out.println(carro.nome + " " + carro.marca + " " + carro.ano);
+        System.out.println(carro2.nome + " " + carro2.marca + " " + carro2.ano);
     }
 }
