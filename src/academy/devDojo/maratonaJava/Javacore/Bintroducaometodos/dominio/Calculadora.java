@@ -35,5 +35,25 @@ public class Calculadora {
         System.out.println("dentro do metodo: num1: " + num1 + " num2: " + num2);
     }
 
+    public void somaArr(int[] numeros) {
+        int soma = 0;
+
+        for(int num : numeros) {
+            soma += num;
+        }
+
+        System.out.println(soma);
+    }
+
+    public void somaVarArgs(int... numeros) {
+        int soma = 0;
+
+        for(int num : numeros) {
+            soma += num;
+        }
+
+        System.out.println(soma);
+    }
+
 
 }
