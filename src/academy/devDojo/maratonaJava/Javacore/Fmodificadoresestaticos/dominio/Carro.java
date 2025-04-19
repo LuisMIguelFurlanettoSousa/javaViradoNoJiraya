@@ -3,14 +3,26 @@ package academy.devDojo.maratonaJava.Javacore.Fmodificadoresestaticos.dominio;
 public class Carro {
     private String marca;
     private double velocidadeMaxima;
-    public static double velocidadeLimite = 250;
+    private static double velocidadeLimite = 250;
 
+    public Carro(String marca, double velocidadeMaxima) {
+        this.marca = marca;
+        this.velocidadeMaxima = velocidadeMaxima;
+    }
 
     public void imprime() {
         System.out.println("-----------------------");
         System.out.println("Marca: " + this.marca);
         System.out.println("Velocidade Maxima: " + this.velocidadeMaxima);
         System.out.println("Velocidade Limite: " + Carro.velocidadeLimite);
+    }
+
+    public static void setVelocidadeLimite(double velocidadeLimite) {
+        Carro.velocidadeLimite = velocidadeLimite;
+    }
+
+    public static double getVelocidadeLimite() {
+        return velocidadeLimite;
     }
 
     public String getMarca() {
