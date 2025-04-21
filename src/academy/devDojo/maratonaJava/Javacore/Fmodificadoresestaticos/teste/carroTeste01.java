@@ -12,6 +12,7 @@ public class carroTeste01 {
 
         c1.imprime();
         c2.imprime();
+        System.out.println( Carro.getVelocidadeLimite());
 
     }
 }
