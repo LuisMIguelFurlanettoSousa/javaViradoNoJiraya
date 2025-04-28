@@ -9,9 +9,9 @@ public class Jogador {
     }
 
     public void imprime() {
-        System.out.println(this.nome);
+        System.out.println("Nome do jogador: " + this.nome);
         if (time != null) {
-            System.out.println(time.getNome());
+            System.out.println("time: " + time.getNome());
         }
     }
 
