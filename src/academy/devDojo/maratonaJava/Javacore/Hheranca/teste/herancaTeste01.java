@@ -25,9 +25,9 @@ public class herancaTeste01 {
         funcionario.setCpf("012879300283917");
         funcionario.setEndereco(endereco);
         funcionario.setSalario(26);
-        System.out.println("Salari: " + funcionario.getSalario());
         funcionario.imprime();
 
+        funcionario.receita();
 
 
 

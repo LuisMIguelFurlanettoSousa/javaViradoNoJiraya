@@ -1,14 +1,14 @@
 package academy.devDojo.maratonaJava.Javacore.Hheranca.dominio;
 
 public class Pessoa {
-    private String nome;
-    private String cpf;
-    private Endereco endereco;
+    protected String nome;
+    protected String cpf;
+    protected Endereco endereco;
 
     public void imprime() {
         System.out.println("Nome: " + this.nome);
         System.out.println("Cpf: " + this.cpf);
-        System.out.println("Rua: " + this.endereco.getRua() + "Cep: " + this.endereco.getCep());
+        System.out.println("Rua: " + this.endereco.getRua() + " Cep: " + this.endereco.getCep());
     }
 
     public String getNome() {
