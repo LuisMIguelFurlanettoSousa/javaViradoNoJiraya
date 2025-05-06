@@ -8,6 +8,7 @@ public class carroTeste01 {
         Carro carro = new Carro();
 
         carro.COMPRADOR.setNome("luis");
+        carro.COMPRADOR.setNome("pedro");
 
         System.out.println(carro.COMPRADOR);
 
@@ -15,6 +16,7 @@ public class carroTeste01 {
 
         Ferrari ferrari = new Ferrari();
         ferrari.setNome("Enzo");
+        ferrari.setNome("Luis");
         ferrari.imprimi();
     }
 }
