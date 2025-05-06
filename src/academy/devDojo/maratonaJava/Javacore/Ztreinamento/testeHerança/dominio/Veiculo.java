@@ -1,4 +1,4 @@
-package academy.devDojo.maratonaJava.Javacore.Ztreinamento.dominio;
+package academy.devDojo.maratonaJava.Javacore.Ztreinamento.testeHerança.dominio;
 
 public class Veiculo {
     private String marca;

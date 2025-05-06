@@ -1,7 +1,7 @@
-package academy.devDojo.maratonaJava.Javacore.Ztreinamento.teste;
+package academy.devDojo.maratonaJava.Javacore.Ztreinamento.testeHerança.teste;
 
-import academy.devDojo.maratonaJava.Javacore.Ztreinamento.dominio.Carro;
-import academy.devDojo.maratonaJava.Javacore.Ztreinamento.dominio.Moto;
+import academy.devDojo.maratonaJava.Javacore.Ztreinamento.testeHerança.dominio.Carro;
+import academy.devDojo.maratonaJava.Javacore.Ztreinamento.testeHerança.dominio.Moto;
 
 public class carroTeste01 {
     public static void main(String[] args) {
