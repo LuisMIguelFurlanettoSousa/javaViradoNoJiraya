@@ -1,36 +1,49 @@
 package academy.devDojo.maratonaJava.Javacore.Ztreinamento.ClassEnum;
 
+import academy.devDojo.maratonaJava.Javacore.Ztreinamento.SistemaDeGestaoDeBibliteca.dominio.Disponibilidade;
 import academy.devDojo.maratonaJava.Javacore.Ztreinamento.SistemaDeGestaoDeBibliteca.dominio.Livro;
+
+import java.util.ArrayList;
 
 public class Usuario {
     private String nome;
     private String cpf;
     private int idade;
-    private Livro[] livros = new Livro[3];
+    private ArrayList<Livro> livros;
 
-    public Usuario(String nome, String cpf, int idade) {
+    public Usuario(String nome, String cpf, int idade, ArrayList<Livro> livros) {
         this.nome = nome;
         this.cpf = cpf;
         this.idade = idade;
+        this.livros = livros;
     }
-    // falta a cada usuario ja adicionar ele em um array. 2 - 3
-    // falta a parte de exibir os livros emprestados por cada usuario, provavelmente usando um for no array de usuarios cadastrados 3 - 3
+
+    public void emprestarLivro(ArrayList<Livro> livros, Livro livro) {
+        for (Livro i : livros) {
+            if (i.getTitulo().equals(livro.getTitulo()) && i.getDisponibilidade() == Disponibilidade.DISPONIVEL) {
+                this.livros.add(livro);
+                i.setDisponibilidade(Disponibilidade.INDISPONIVEL);
+            }
+        }
+    }
+
+    // eu ainda tenho que criar uma lista de livros que estao emprestados
+
+    public void devolverLivros(Livro livro) {
+        for (Livro i : livros) {
+            if (livro == i) {
+                int indexLivro = this.livros.indexOf(i);
+                this.livros.remove(indexLivro);
+                i.setDisponibilidade(Disponibilidade.DISPONIVEL);
+            }
+        }
+    }
 
     public Livro livrosDoUsuario() {
         for (Livro livro : this.livros) {
             System.out.println(livro);
         }
         return null;
-    }
-
-    public void emprestarLivros(Livro[] livros) {
-        for (Livro livro : livros) {
-            // declarei la em Livro um hashlist mas nn sei pq nn ta pegando aqui
-            // acredito que tenho que criar um array estatico pra quando o constructor for chamadodo ja passando todos os livros a serem cadastrados
-            // vo te que fazer um array la em Livro, para armazenar os livros existentes e fazer a verificaçao se esta disponivel.
-            livro.setDisponibilidade("Indisponivel");
-        }
-        this.livros = livros;
     }
 
     public String getNome() {

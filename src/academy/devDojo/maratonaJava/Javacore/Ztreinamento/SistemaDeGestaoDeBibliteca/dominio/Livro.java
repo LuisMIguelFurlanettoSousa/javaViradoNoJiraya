@@ -9,29 +9,26 @@ public class Livro {
     private Genero genero;
     private int anoPublicacao;
     private int ISBN;
-    private String disponibilidade = "Disponivel";
+    private Disponibilidade disponibilidade;
 
-    public ArrayList todosLivros = new ArrayList();
-
-    public Livro(String titulo, Autor autor, Genero genero, int anoPublicacao, int ISBN) {
+    public Livro(String titulo, Autor autor, Genero genero, int anoPublicacao, int ISBN, Disponibilidade disponibilidade) {
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
         this.anoPublicacao = anoPublicacao;
         this.ISBN = ISBN;
-
-        todosLivros.add(titulo);
+        this.disponibilidade = disponibilidade;
     }
 
     public Livro() {
 
     };
 
-    public String getDisponibilidade() {
+    public Disponibilidade getDisponibilidade() {
         return disponibilidade;
     }
 
-    public void setDisponibilidade(String disponibilidade) {
+    public void setDisponibilidade(Disponibilidade disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
 
