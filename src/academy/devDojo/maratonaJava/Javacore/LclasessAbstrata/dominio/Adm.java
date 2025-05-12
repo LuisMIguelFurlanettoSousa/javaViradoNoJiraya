@@ -10,7 +10,6 @@ public class Adm extends Funcionario{
 
     }
 
-
     @Override
     public String toString() {
         return "adm{" +

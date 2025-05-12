@@ -1,95 +1,42 @@
 package academy.devDojo.maratonaJava.Javacore.Ztreinamento.SistemaDeGestaoDeBibliteca.dominio;
 
-import java.util.ArrayList;
-import java.util.Date;
-
 public class Livro {
     private String titulo;
-    private Autor autor;
+    private String autor;
     private Genero genero;
-    private int anoPublicacao;
-    private int ISBN;
-    private Disponibilidade disponibilidade;
+    private int ano;
+    private String isbn;
+    private boolean disponivel;
 
-    public Livro(String titulo, Autor autor, Genero genero, int anoPublicacao, int ISBN, Disponibilidade disponibilidade) {
+    public Livro(String titulo, String autor, Genero genero, int ano, String isbn) {
+        if (ano <= 0) throw new IllegalArgumentException("Ano inválido.");
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
-        this.anoPublicacao = anoPublicacao;
-        this.ISBN = ISBN;
-        this.disponibilidade = disponibilidade;
-    }
-
-    public Livro() {
-
-    };
-
-    public Disponibilidade getDisponibilidade() {
-        return disponibilidade;
-    }
-
-    public void setDisponibilidade(Disponibilidade disponibilidade) {
-        this.disponibilidade = disponibilidade;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+        this.ano = ano;
+        this.isbn = isbn;
+        this.disponivel = true;
     }
 
     public String getTitulo() {
         return titulo;
     }
 
-    public Autor getAutor() {
-        return autor;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setAutor(Autor autor) {
-        this.autor = autor;
+    public boolean isDisponivel() {
+        return disponivel;
     }
 
-    public Genero getGenero() {
-        return genero;
-    }
-
-    public void setGenero(Genero genero) {
-        this.genero = genero;
-    }
-
-    public int getAnoPublicacao() {
-        return anoPublicacao;
-    }
-
-    Date data = new Date();
-
-    private boolean verificaData() {
-        if (anoPublicacao < 0 && anoPublicacao > data.getYear()) {
-            return false;
-        }
-        return true;
-    }
-    public void setAnoPublicacao(int anoPublicacao) {
-        if (verificaData()) {
-            this.anoPublicacao = anoPublicacao;
-        }
-    }
-
-    public int getISBN() {
-        return ISBN;
-    }
-
-    public void setISBN(int ISBN) {
-        this.ISBN = ISBN;
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
     }
 
     @Override
     public String toString() {
-        return "CadastroLivros{" +
-                "titulo='" + titulo + '\'' +
-                ", autor='" + autor + '\'' +
-                ", genero=" + genero +
-                ", anoPublicacao=" + anoPublicacao +
-                ", ISBN=" + ISBN +
-                '}';
+        return String.format("Título: %s | Autor: %s | Gênero: %s | Ano: %d | ISBN: %s | Status: %s",
+                titulo, autor, genero, ano, isbn, disponivel ? "Disponível" : "Emprestado");
     }
 }
